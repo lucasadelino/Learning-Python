@@ -10,21 +10,20 @@ def collatz(number):
 
 while True:
     try:
-        user_number = int(input('Enter a number (or enter 0 to exit)\n'))
+        user_number = altitude = int(input('Enter a number (or enter 0 to exit)\n'))
         if user_number > 0:
             steps = 0
-            altitude = user_number
             while user_number > 1:
                 user_number = collatz(user_number)
+                steps += 1
                 if user_number > altitude:
                     altitude = user_number
-                steps += 1
                 print(user_number)
-            print('Sequence finished after ' + str(steps) + ' steps with a max altitude of ' + str(altitude), end='\n\n')
+            print('Sequence finished after ' + str(steps) + ' steps with an altitude of ' + str(altitude), end='\n\n')
         elif user_number < 0:
             print('Please enter a positive integer')
         else:
             exit()
     except ValueError:
-        print('That\'s not a valid input. Please enter a positive integer')
+        print('That\'s not a number.')
 
