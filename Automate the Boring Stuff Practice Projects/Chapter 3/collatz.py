@@ -21,8 +21,10 @@ while True:
                 steps += 1
                 print(user_number)
             print('Sequence finished after ' + str(steps) + ' steps with a max altitude of ' + str(altitude), end='\n\n')
+        elif user_number < 0:
+            print('Please enter a positive integer')
         else:
             exit()
     except ValueError:
-        print('Oops! That\'s not a number!')
+        print('That\'s not a valid input. Please enter a positive integer')
 
