@@ -5,13 +5,8 @@ import re
 date_regex = re.compile(r'([0-2]\d|30|31)/(0[1-9]|1[0-2])/((1|2)\d{3})')
 months30 = ('04', '06', '09', '11')
 
-def isleap(year): #TODO: Look for a way to compare this in one line
-    if year % 4 == 0:
-        if year % 100 == 0:
-            if year % 400 == 0:
-                return True
-            else:
-                return False
+def isleap(year):
+    if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
         return True
     else:
         return False
